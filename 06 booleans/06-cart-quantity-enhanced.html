@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card quantity Enhanced</title>
+  </head>
+  <body>
+    -
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cart Quantity</title>
+      </head>
+      <body>
+        <button onclick="console.log(`Cart quantity: ${cartQuantity}`)">
+          Show Quantity
+        </button>
+
+        <button
+          onclick="cartQuantity++;
+             if (cartQuantity === 11) {
+              cartQuantity = 10;
+          alert(`Cart is Full! ${cartQuantity}/10`)
+        } 
+        console.log(cartQuantity);"
+        >
+          Add to Cart
+        </button>
+
+        <button
+          onclick="cartQuantity += 2;
+        if (cartQuantity === 12) {
+         cartQuantity = 10;
+     alert(`Cart is Full! ${cartQuantity}/10`)
+   } 
+   else if (cartQuantity === 11) {
+    cartQuantity = 9;
+    alert (`Unable to use +2 due to cart quantity! ${cartQuantity}/10\nTry using Add to Cart!`)
+   }
+   console.log(cartQuantity);"
+        >
+          +2
+        </button>
+        x
+        <button
+          onclick="cartQuantity += 3;
+        if (cartQuantity === 11) {
+         cartQuantity = 8;
+     alert(`Unable to use +3 due to cart quantity! ${cartQuantity}/10\nTry using +2`)
+   } 
+   else if (cartQuantity === 12) {
+    cartQuantity = 9;
+    alert(`Unable to use +3 due to cart quantity! ${cartQuantity}/10\nTry using +1`)
+   }
+   else if (cartQuantity === 13) {
+    cartQuantity = 10;
+    alert(`Cart is Full! ${cartQuantity}/10`)
+   }
+   console.log(cartQuantity);"
+        >
+          +3
+        </button>
+
+        <button
+          onclick="cartQuantity = 0;console.log(`Cart has been reset\nNew cart quantity: ${cartQuantity}`)"
+        >
+          Reset Cart
+        </button>
+
+        <button
+          onclick="cartQuantity -= 2;
+        if (cartQuantity === -2) {
+        cartQuantity = 0;
+            alert(`Unable to use -2 due to cart quantity! ${cartQuantity}/10`)
+        } 
+        else if (cartQuantity === -1) {
+        cartQuantity = 1;
+            alert(`Unable to use -2 due to cart quantity! ${cartQuantity}/10\nTry using -1`)
+   }
+   console.log(cartQuantity);
+   "
+        >
+          -2
+        </button>
+        <button
+          onclick="cartQuantity -= 3;
+        if (cartQuantity === -3) {
+        cartQuantity = 0;
+            alert(`Unable to use -3 due to cart quantity! ${cartQuantity}/10`)
+        } 
+        else if (cartQuantity === -1) {
+        cartQuantity = 2;
+            alert(`Unable to use -3 due to cart quantity! ${cartQuantity}/10\nTry using -2`)
+   }
+   else if (cartQuantity === -2) {
+        cartQuantity = 1;
+            alert(`Unable to use -3 due to cart quantity! ${cartQuantity}/10\nTry using -1`)
+          }
+   console.log(cartQuantity);"
+        >
+          -3
+        </button>
+
+        <script src="06-cart-quantity-enhanced.js"></script>
+      </body>
+    </html>
+  </body>
+</html>
