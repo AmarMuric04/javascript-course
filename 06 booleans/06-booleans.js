@@ -57,10 +57,12 @@ if (isHoliday === 6 || isHoliday === 7 || isHoliday === 8) {
 } else {
   isHoliday = false;
 }
-let Holiday = isHoliday ? "Its the holiday" : "Its not the holidays";
+let Holiday = isHoliday
+  ? "Its the holiday\nDiscounts are unavailable"
+  : "Its not the holidays";
 console.log(Holiday);
 
-if (isHoliday) {
+if (!isHoliday) {
   age = +prompt("Enter age");
   if (age <= 6 || (age >= 65 && age <= 116)) {
     console.log("You are eligible for a discount.");
