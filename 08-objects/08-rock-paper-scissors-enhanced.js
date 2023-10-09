@@ -1,8 +1,13 @@
-let score = {
-  wins: 0,
-  losses: 0,
-  ties: 0,
-};
+/*Local storage is used to store things inside of it so that when u refresh a page the contents arent lost, for example the score of this game, syntax for it is as follows 
+
+To put things inside a localStorage => localStorage.setItem(<name>, <contents); it only accepts strings, if u want to put something in it thats not a string you need to turn it into a string, for example: JSON.stringify(<content>).
+
+To get things out of a localStorage => localStorage.getItem(<name>, <content>), if you dont want your content to be a string, you can turn it into whatever it was before, using: JSON.parse(<content>); */
+
+const score = JSON.parse(localStorage.getItem("score"));
+
+console.log(score);
+
 function pickComputerMove() {
   const randomNumber = Math.floor(Math.random() * 3);
 
@@ -18,6 +23,9 @@ function pickComputerMove() {
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
+
+  let result = "";
+
   if (playerMove === "Paper") {
     if (computerMove === "Rock") {
       result = "Won.";
@@ -50,19 +58,13 @@ function playGame(playerMove) {
   } else if (result === "Lost.") {
     score.losses += 1;
   }
+  localStorage.setItem("score", JSON.stringify(score));
   alert(
     `you picked ${playerMove}, Computer picked ${computerMove}, you ${result}\nWins: ${
       score.wins
-    }, Ties: ${score.ties}, Losses: ${score.losses},\n W/T/L ratio: ${(
-      (score.wins / (score.wins + score.ties + score.losses)) *
-      100
-    ).toFixed(0)}%/${(
-      (score.ties / (score.wins + score.ties + score.losses)) *
-      100
-    ).toFixed(0)}%/${(
-      (score.losses / (score.wins + score.ties + score.losses)) *
-      100
-    ).toFixed(0)}% `
+    }, Ties: ${score.ties}, Losses: ${
+      score.losses
+    },\n W/T/L ratio: ${winPercentage()}%/${tiePercentage()}%/${lossPercentage()}% `
   );
 }
 function resetScore() {
@@ -72,6 +74,27 @@ function resetScore() {
     ties: 0,
   };
   alert(
-    `Score has been reset.\nWins: ${score.wins}, Ties: ${score.ties}, Losses: ${score.losses}`
+    `Score has been reset.\nWins: ${score.wins}, Ties: ${score.ties}, Losses: ${score.losses}\nW/T/L ratio: 0%/0%/0%`
   );
+}
+function winPercentage() {
+  const winPercentage = (
+    (score.wins / (score.wins + score.ties + score.losses)) *
+    100
+  ).toFixed(0);
+  return winPercentage;
+}
+function tiePercentage() {
+  const tiePercentage = (
+    (score.ties / (score.wins + score.ties + score.losses)) *
+    100
+  ).toFixed(0);
+  return tiePercentage;
+}
+function lossPercentage() {
+  const lossPercentage = (
+    (score.losses / (score.wins + score.ties + score.losses)) *
+    100
+  ).toFixed(0);
+  return lossPercentage;
 }
