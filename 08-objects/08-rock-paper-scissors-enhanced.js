@@ -18,7 +18,6 @@ function pickComputerMove() {
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
-
   if (playerMove === "Paper") {
     if (computerMove === "Rock") {
       result = "Won.";
@@ -51,9 +50,19 @@ function playGame(playerMove) {
   } else if (result === "Lost.") {
     score.losses += 1;
   }
-
   alert(
-    `you picked ${playerMove}, Computer picked ${computerMove}, you ${result}\nWins: ${score.wins}, Ties: ${score.ties}, Losses: ${score.losses}`
+    `you picked ${playerMove}, Computer picked ${computerMove}, you ${result}\nWins: ${
+      score.wins
+    }, Ties: ${score.ties}, Losses: ${score.losses},\n W/T/L ratio: ${(
+      (score.wins / (score.wins + score.ties + score.losses)) *
+      100
+    ).toFixed(0)}%/${(
+      (score.ties / (score.wins + score.ties + score.losses)) *
+      100
+    ).toFixed(0)}%/${(
+      (score.losses / (score.wins + score.ties + score.losses)) *
+      100
+    ).toFixed(0)}% `
   );
 }
 function resetScore() {
