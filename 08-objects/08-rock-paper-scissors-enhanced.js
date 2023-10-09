@@ -18,24 +18,15 @@ function pickComputerMove() {
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
+
   if (playerMove === "Paper") {
     if (computerMove === "Rock") {
       result = "Won.";
-    } else if (computerMove === "play") {
+    } else if (computerMove === "Paper") {
       result = "Tied.";
     } else if (computerMove === "Scissors") {
       result = "Lost.";
     }
-    if (result === "Won.") {
-      score.wins += 1;
-    } else if (result === "Tied.") {
-      score.ties += 1;
-    } else if (result === "Lost.") {
-      score.losses += 1;
-    }
-    alert(
-      `you picked ${playerMove}, Computer picked ${computerMove}, you ${result}\nWins:${score.wins}, Ties:${score.ties}, Losses: ${score.losses}.`
-    );
   } else if (playerMove === "Rock") {
     if (computerMove === "Rock") {
       result = "Tied.";
@@ -44,16 +35,6 @@ function playGame(playerMove) {
     } else if (computerMove === "Scissors") {
       result = "Won.";
     }
-    if (result === "Won.") {
-      score.wins += 1;
-    } else if (result === "Tied.") {
-      score.ties += 1;
-    } else if (result === "Lost.") {
-      score.losses += 1;
-    }
-    alert(
-      `you picked ${playerMove}, Computer picked ${computerMove}, you ${result}\nWins:${score.wins}, Ties:${score.ties}, Losses: ${score.losses}`
-    );
   } else if (playerMove === "Scissors") {
     if (computerMove === "Rock") {
       result = "Lost.";
@@ -62,18 +43,18 @@ function playGame(playerMove) {
     } else if (computerMove === "Scissors") {
       result = "Tied.";
     }
-    if (result === "Won.") {
-      score.wins += 1;
-    } else if (result === "Tied.") {
-      score.ties += 1;
-    } else if (result === "Lost.") {
-      score.losses += 1;
-    }
-
-    alert(
-      `you picked ${playerMove}, Computer picked ${computerMove}, you ${result}\nWins: ${score.wins}, Ties: ${score.ties}, Losses: ${score.losses}`
-    );
   }
+  if (result === "Won.") {
+    score.wins += 1;
+  } else if (result === "Tied.") {
+    score.ties += 1;
+  } else if (result === "Lost.") {
+    score.losses += 1;
+  }
+
+  alert(
+    `you picked ${playerMove}, Computer picked ${computerMove}, you ${result}\nWins: ${score.wins}, Ties: ${score.ties}, Losses: ${score.losses}`
+  );
 }
 function resetScore() {
   score = {
