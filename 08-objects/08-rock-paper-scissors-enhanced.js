@@ -6,15 +6,11 @@ To get things out of a localStorage => localStorage.getItem(<name>, <content>), 
 
 /*3.0
 There was actually a bug where if u Reset score and then refresh the page, the score doesnt get reset. Fixed!*/
-let score = JSON.parse(localStorage.getItem("score"));
-
-if (score === null) {
-  score = {
-    wins: 0,
-    losses: 0,
-    ties: 0,
-  };
-}
+let score = JSON.parse(localStorage.getItem("score")) || {
+  wins: 0,
+  losses: 0,
+  ties: 0,
+};
 
 console.log(score);
 
