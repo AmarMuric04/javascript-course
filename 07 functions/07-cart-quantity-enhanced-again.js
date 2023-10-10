@@ -1,5 +1,7 @@
-let cartQuantity = 0;
+/* 4.0 Tried adding a localStorage to something that isnt an object, worked. Lets goooo!*/
 
+let cart = JSON.parse(localStorage.getItem("cart"));
+let cartQuantity = cart;
 function changeQuantity(num) {
   if (num === 1) {
     if (cartQuantity >= 10) {
@@ -62,6 +64,7 @@ function changeQuantity(num) {
     }
     console.log(`Cart quantity stands at ${cartQuantity}`);
   }
+  localStorage.setItem("cart", JSON.stringify(cartQuantity));
 }
 
 function showQuantity() {
