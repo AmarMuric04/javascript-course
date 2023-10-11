@@ -93,3 +93,53 @@ const object5 = {
 };
 object5.function1();
 // object5.method();
+const basketball = {
+  price: 2095,
+  name: "basketball",
+};
+const socks = {
+  price: 1399,
+  name: "socks",
+};
+
+function comparePrice(basketball, socks) {
+  basketball.price > socks.price
+    ? console.log(`${socks.name} (${socks.price}) is less expensive`)
+    : console.log(`${basketball.name} (${basketball.price}) is less expensive`);
+}
+comparePrice(basketball, socks);
+
+/*Task is to make 2 products, and then compare them two and show the one that costs less <- Completed
+
+2nd Task is to compare the two products and see if their contents (name and price) are the same.*/
+
+const product1 = {
+  name: "umbrella",
+  price: 1000,
+};
+const product2 = {
+  name: "umbrella",
+  price: 1000,
+};
+const product3 = {
+  name: "umbrella",
+  price: 999,
+};
+function isSameProduct() {
+  let check =
+    product1.price === product2.price && product2.name === product2.name
+      ? true
+      : false;
+
+  check = console.log(check);
+  /*shows true because the insides of the object aka the contents are the SAME. if we did product1 === product2 ? true : false, it would say false*/
+
+  check = product1.price === product3.price && product1.name === product3.name;
+  console.log(check); /*shows false because the price is different*/
+}
+isSameProduct();
+const word = "ThIs TeXt WiLl TuRn To LoWeRcAsE";
+console.log(word);
+console.log(word.toLowerCase());
+const repeat = "Hello";
+console.log(repeat.repeat(5));
