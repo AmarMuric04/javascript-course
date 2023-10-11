@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="09-rps-enhanced.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Orbitron:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="general-wrapper">
+      <div id="button-and-reset-wrapper">
+        <p class="name">Rock Paper Scissors</p>
+        <div id="button-wrapper">
+          <button class="button" onclick="playGame('Rock')">✊</button>
+          <button class="button" onclick="playGame('Paper')">🖐</button>
+          <button class="button" onclick="playGame('Scissors')">✌</button>
+        </div>
+        <button id="reset-button" onclick="resetScore()">Reset Score</button>
+      </div>
+      <div id="resultWrapper">
+        <p id="titleOfResult">Summary:</p>
+        <p id="result">Play the game!</p>
+        <p id="youPlayed"></p>
+        <p id="compPlayed"></p>
+      </div>
+    </div>
+    <div id="score">
+      <div id="score-wrapper">
+        <p id="wins"></p>
+        <p id="ties"></p>
+        <p id="losses"></p>
+      </div>
+      <div id="percentage-wrapper">
+        <p id="winPercentage"></p>
+        <p id="tiePercentage"></p>
+        <p id="lossPercentage"></p>
+      </div>
+    </div>
+    <script src="09-rps-enhanced.js"></script>
+  </body>
+</html>
