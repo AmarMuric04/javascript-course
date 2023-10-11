@@ -32,3 +32,5 @@ comparePrice(basketball, socks);
 /*Task is to make 2 products, and then compare them two and show the one that costs less <- Completed
 
 2nd Task is to compare the two products and see if their contents (name and price) are the same.*/
+
+function isSameProduct() {}
