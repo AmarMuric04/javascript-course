@@ -24,6 +24,7 @@ body {
   top: 1vh;
   text-decoration: underline;
 }
+
 #wins,
 #ties,
 #losses {
@@ -36,16 +37,30 @@ body {
   height: 5vh;
   border-radius: 2.5vh;
   font-weight: 700;
+  font-size: 2vh;
 }
-#wins {
+#wins,
+#rockWins,
+#paperWins,
+#scissorsWins {
   background-color: lime;
+  color: black;
 }
-#ties {
+#ties,
+#rockTies,
+#paperTies,
+#scissorsTies {
   background-color: orange;
+  color: black;
 }
-#losses {
+#losses,
+#rockLosses,
+#paperLosses,
+#scissorsLosses {
   background-color: rgb(179, 77, 77);
+  color: black;
 }
+
 #score-wrapper {
   font-family: "Open Sans", sans-serif;
   font-family: "Orbitron", sans-serif;
@@ -125,7 +140,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-family: "Orbitron", sans-serif;
   color: black;
-  margin: 4.8vh -0.2vh;
+  margin: 5.1vh -0.2vh;
   font-weight: 700;
   font-size: 1.5vh;
 }
@@ -165,5 +180,25 @@ body {
 #paperWins,
 #paperTies,
 #paperLosses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 1vh 0vh;
+  border-radius: 5;
+  font-weight: bold;
+  height: 5vh;
+  width: 5vh;
+  border-radius: 1vh;
 }
+/* #antiEpilepsyButton {
+  position: absolute;
+  top: 2vh;
+  left: 2vh;
+  background-color: black;
+  color: white;
+  border: 0.5vh solid white;
+  height: 5vh;
+  width: 15vh;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Orbitron", sans-serif;
+} */

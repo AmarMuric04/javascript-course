@@ -13,6 +13,7 @@ let clickedScissors = JSON.parse(localStorage.getItem("playedScissors")) || {
   losses: 0,
   ties: 0,
 };
+
 paperScore();
 rockScore();
 scissorsScore();
@@ -25,6 +26,18 @@ overallLossPercentage();
 checkIfWinsNaN();
 checkIfTiesNaN();
 checkIfLossesNaN();
+checkIfRockWinPercNaN();
+checkIfRockLossPercNaN();
+checkIfRockTiesPercNaN();
+rockWinPercentage();
+rockLossPercentage();
+rockTiePercentage();
+paperWinPercentage();
+paperLossPercentage();
+paperTiesPercentage();
+scissorTiesPercentage();
+scissorWinPercentage();
+scissorLossPercentage();
 
 function checkIfWinsNaN() {
   if (overallWinPercentage() !== 0 && overallWinPercentage() < 0) {
@@ -44,21 +57,40 @@ function checkIfLossesNaN() {
     document.getElementById("lossPercentage").textContent = "0 %";
   }
 }
+function checkIfRockWinPercNaN() {
+  if (rockWinPercentage() !== 0 && rockWinPercentage() < 0) {
+  } else {
+    document.getElementById("rockWinPercentage").textContent = "0 %";
+  }
+}
+function checkIfRockLossPercNaN() {
+  if (rockLossPercentage() !== 0 && rockLossPercentage() < 0) {
+  } else {
+    document.getElementById("rockLossPercentage").textContent = "0 %";
+  }
+}
+function checkIfRockTiesPercNaN() {
+  if (rockTiePercentage() !== 0 && rockTiePercentage() < 0) {
+  } else {
+    document.getElementById("rockTiePercentage").textContent = "0 %";
+  }
+}
 function playedRock() {
   playerMove = "Rock";
   result = "";
   let pickComputerMove = computerMove();
   if (pickComputerMove === "Rock") {
-    result = "Tie";
+    result = "Tied";
     clickedRock.ties += 1;
   } else if (pickComputerMove === "Paper") {
-    result = "Win";
+    result = "Lost";
     clickedRock.wins += 1;
   } else {
-    result = "Loss";
+    result = "Won";
     clickedRock.losses += 1;
   }
   localStorage.setItem("playedRock", JSON.stringify(clickedRock));
+  // changeColor();
   rockScore();
   overallWins();
   overallTies();
@@ -66,6 +98,15 @@ function playedRock() {
   overallWinPercentage();
   overallTiePercentage();
   overallLossPercentage();
+  rockWinPercentage();
+  rockLossPercentage();
+  rockTiePercentage();
+  paperWinPercentage();
+  paperLossPercentage();
+  paperTiesPercentage();
+  scissorTiesPercentage();
+  scissorWinPercentage();
+  scissorLossPercentage();
   document.getElementById("result").textContent = `you ${result}`;
   document.getElementById("youPlayed").textContent = `You played ${playerMove}`;
   document.getElementById(
@@ -78,16 +119,17 @@ function playedPaper() {
   result = "";
   let pickComputerMove = computerMove();
   if (pickComputerMove === "Rock") {
-    result = "Win";
+    result = "Won";
     clickedPaper.wins += 1;
   } else if (pickComputerMove === "Paper") {
-    result = "Tie";
+    result = "Tied";
     clickedPaper.ties += 1;
   } else {
-    result = "Losses";
+    result = "Lost";
     clickedPaper.losses += 1;
   }
   localStorage.setItem("playedPaper", JSON.stringify(clickedPaper));
+  // changeColor();
   paperScore();
   overallWins();
   overallTies();
@@ -95,6 +137,15 @@ function playedPaper() {
   overallWinPercentage();
   overallTiePercentage();
   overallLossPercentage();
+  rockWinPercentage();
+  rockLossPercentage();
+  rockTiePercentage();
+  paperWinPercentage();
+  paperLossPercentage();
+  paperTiesPercentage();
+  scissorTiesPercentage();
+  scissorWinPercentage();
+  scissorLossPercentage();
   document.getElementById("result").textContent = `you ${result}`;
   document.getElementById("youPlayed").textContent = `You played ${playerMove}`;
   document.getElementById(
@@ -107,17 +158,18 @@ function playedScissors() {
   result = "";
   let pickComputerMove = computerMove();
   if (pickComputerMove === "Rock") {
-    result = "Loss";
+    result = "Lost";
     clickedScissors.losses += 1;
   } else if (pickComputerMove === "Paper") {
-    result = "Win";
+    result = "Won";
     clickedScissors.wins += 1;
   } else {
-    result = "Ties";
+    result = "Tied";
     clickedScissors.ties += 1;
   }
 
   localStorage.setItem("playedScissors", JSON.stringify(clickedScissors));
+  // changeColor();
   scissorsScore();
   overallWins();
   overallTies();
@@ -125,6 +177,15 @@ function playedScissors() {
   overallWinPercentage();
   overallTiePercentage();
   overallLossPercentage();
+  rockWinPercentage();
+  rockLossPercentage();
+  rockTiePercentage();
+  paperWinPercentage();
+  paperLossPercentage();
+  paperTiesPercentage();
+  scissorTiesPercentage();
+  scissorWinPercentage();
+  scissorLossPercentage();
   document.getElementById("result").textContent = `you ${result}`;
   document.getElementById("youPlayed").textContent = `You played ${playerMove}`;
   document.getElementById(
@@ -166,7 +227,94 @@ function scissorsScore() {
     "scissorsLosses"
   ).textContent = `${clickedScissors.losses}`;
 }
-
+function rockWinPercentage() {
+  let rockWinPerc = (
+    (clickedRock.wins /
+      (clickedRock.wins + clickedRock.losses + clickedRock.ties)) *
+    100
+  ).toFixed(0);
+  document.getElementById("rockWinPercentage").textContent = `${rockWinPerc} %`;
+}
+function rockTiePercentage() {
+  let rockTiePerc = (
+    (clickedRock.ties /
+      (clickedRock.wins + clickedRock.losses + clickedRock.ties)) *
+    100
+  ).toFixed(0);
+  document.getElementById(
+    "rockTiesPercentage"
+  ).textContent = `${rockTiePerc} %`;
+}
+function rockLossPercentage() {
+  let rockLossPerc = (
+    (clickedRock.losses /
+      (clickedRock.wins + clickedRock.losses + clickedRock.ties)) *
+    100
+  ).toFixed(0);
+  document.getElementById(
+    "rockLossPercentage"
+  ).textContent = `${rockLossPerc} %`;
+}
+function paperWinPercentage() {
+  let paperWinPerc = (
+    (clickedPaper.wins /
+      (clickedPaper.wins + clickedPaper.losses + clickedPaper.ties)) *
+    100
+  ).toFixed(0);
+  document.getElementById(
+    "paperWinPercentage"
+  ).textContent = `${paperWinPerc} %`;
+}
+function paperLossPercentage() {
+  let paperLossPerc = (
+    (clickedPaper.losses /
+      (clickedPaper.wins + clickedPaper.losses + clickedPaper.ties)) *
+    100
+  ).toFixed(0);
+  document.getElementById(
+    "paperLossPercentage"
+  ).textContent = `${paperLossPerc} %`;
+}
+function paperTiesPercentage() {
+  let paperTiePerc = (
+    (clickedPaper.ties /
+      (clickedPaper.wins + clickedPaper.losses + clickedPaper.ties)) *
+    100
+  ).toFixed(0);
+  document.getElementById(
+    "paperTiesPercentage"
+  ).textContent = `${paperTiePerc} %`;
+}
+function scissorWinPercentage() {
+  let scissorWinPerc = (
+    (clickedScissors.wins /
+      (clickedScissors.wins + clickedScissors.losses + clickedScissors.ties)) *
+    100
+  ).toFixed(0);
+  document.getElementById(
+    "scissorsWinPercentage"
+  ).textContent = `${scissorWinPerc} %`;
+}
+function scissorTiesPercentage() {
+  let scissorTiesPerc = (
+    (clickedScissors.ties /
+      (clickedScissors.wins + clickedScissors.losses + clickedScissors.ties)) *
+    100
+  ).toFixed(0);
+  document.getElementById(
+    "scissorsTiesPercentage"
+  ).textContent = `${scissorTiesPerc} %`;
+}
+function scissorLossPercentage() {
+  let scissorLossPerc = (
+    (clickedScissors.losses /
+      (clickedScissors.wins + clickedScissors.losses + clickedScissors.ties)) *
+    100
+  ).toFixed(0);
+  document.getElementById(
+    "scissorsLossPercentage"
+  ).textContent = `${scissorLossPerc} %`;
+}
 function overallWins() {
   let mainWins = (document.getElementById("wins").textContent = `${
     clickedRock.wins + clickedPaper.wins + clickedScissors.wins
@@ -262,6 +410,18 @@ function resetScore() {
   checkIfWinsNaN();
   checkIfTiesNaN();
   checkIfLossesNaN();
+  rockWinPercentage();
+  rockLossPercentage();
+  rockTiePercentage();
+  paperWinPercentage();
+  paperLossPercentage();
+  paperTiesPercentage();
+  scissorTiesPercentage();
+  scissorWinPercentage();
+  scissorLossPercentage();
+  checkIfRockWinPercNaN();
+  checkIfRockLossPercNaN();
+  checkIfRockTiesPercNaN();
   localStorage.removeItem("playedRock");
   localStorage.removeItem("playedPaper");
   localStorage.removeItem("playedScissors");
@@ -272,3 +432,12 @@ function resetScore() {
   document.getElementById("youPlayed").textContent = ``;
   document.getElementById("compPlayed").textContent = ``;
 }
+// function changeColor() {
+//   if (result === "Won") {
+//     document.getElementById("resultWrapper").style.backgroundColor = "green";
+//   } else if (result === "Lost") {
+//     document.getElementById("resultWrapper").style.backgroundColor = "red";
+//   } else {
+//     document.getElementById("resultWrapper").style.backgroundColor = "orange";
+//   }
+// }
