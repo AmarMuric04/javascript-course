@@ -17,62 +17,152 @@ let clickedScissors = JSON.parse(localStorage.getItem("playedScissors")) || {
 paperScore();
 rockScore();
 scissorsScore();
-overallWins();
-overallTies();
-overallLosses();
 overallWinPercentage();
 overallTiePercentage();
 overallLossPercentage();
 checkIfWinsNaN();
 checkIfTiesNaN();
 checkIfLossesNaN();
-checkIfRockWinPercNaN();
-checkIfRockLossPercNaN();
-checkIfRockTiesPercNaN();
-rockWinPercentage();
-rockLossPercentage();
-rockTiePercentage();
-paperWinPercentage();
-paperLossPercentage();
-paperTiesPercentage();
-scissorTiesPercentage();
-scissorWinPercentage();
-scissorLossPercentage();
+checkWin();
+checkTies();
+checkLoss();
+checkWinPaper();
+checkTiesPaper();
+checkLossPaper();
+checkWinScissors();
+checkTiesScissors();
+checkLossScissors();
 
 function checkIfWinsNaN() {
-  if (overallWinPercentage() !== 0 && overallWinPercentage() < 0) {
+  let overallPercentageWins = overallWinPercentage();
+  if (overallPercentageWins !== 0 && overallPercentageWins < 0) {
+  } else if (overallPercentageWins > 0) {
+    document.getElementById(
+      "winPercentage"
+    ).textContent = `${overallWinPercentage()} %`;
   } else {
     document.getElementById("winPercentage").textContent = "0 %";
   }
 }
 function checkIfTiesNaN() {
-  if (overallTiePercentage() !== 0 && overallTiePercentage() < 0) {
+  let overallPercentageTies = overallTiePercentage();
+  if (overallPercentageTies !== 0 && overallPercentageTies < 0) {
+  } else if (overallPercentageTies > 0) {
+    document.getElementById(
+      "tiePercentage"
+    ).textContent = `${overallTiePercentage()} %`;
   } else {
-    document.getElementById("tiePercentage").textContent = "0 %";
+    document.getElementById("tiePercentage").textContent = `0 %`;
   }
 }
 function checkIfLossesNaN() {
-  if (overallLossPercentage() !== 0 && overallLossPercentage() < 0) {
+  let overallPercentageLosses = overallLossPercentage();
+  if (overallPercentageLosses !== 0 && overallPercentageLosses < 0) {
+  } else if (overallPercentageLosses > 0) {
+    document.getElementById(
+      "lossPercentage"
+    ).textContent = `${overallLossPercentage()} %`;
   } else {
     document.getElementById("lossPercentage").textContent = "0 %";
   }
 }
-function checkIfRockWinPercNaN() {
-  if (rockWinPercentage() !== 0 && rockWinPercentage() < 0) {
+function checkWin() {
+  let rockWinPerc = rockWinPercentage();
+  if (rockWinPerc !== 0 && rockWinPerc < 0) {
+  } else if (rockWinPerc > 0) {
+    document.getElementById(
+      "rockWinPercentage"
+    ).textContent = `${rockWinPercentage()} %`;
   } else {
     document.getElementById("rockWinPercentage").textContent = "0 %";
   }
 }
-function checkIfRockLossPercNaN() {
-  if (rockLossPercentage() !== 0 && rockLossPercentage() < 0) {
+function checkTies() {
+  let rockTiePerc = rockTiePercentage();
+  if (rockTiePerc !== 0 && rockTiePerc < 0) {
+  } else if (rockTiePerc > 0) {
+    document.getElementById(
+      "rockTiesPercentage"
+    ).textContent = `${rockTiePercentage()} %`;
+  } else {
+    document.getElementById("rockTiesPercentage").textContent = "0 %";
+  }
+}
+function checkLoss() {
+  let rockLossPerc = rockLossPercentage();
+  if (rockLossPerc !== 0 && rockLossPerc < 0) {
+  } else if (rockLossPerc > 0) {
+    document.getElementById(
+      "rockLossPercentage"
+    ).textContent = `${rockLossPercentage()} %`;
   } else {
     document.getElementById("rockLossPercentage").textContent = "0 %";
   }
 }
-function checkIfRockTiesPercNaN() {
-  if (rockTiePercentage() !== 0 && rockTiePercentage() < 0) {
+function checkWinPaper() {
+  let paperWinPerc = paperWinPercentage();
+  if (paperWinPerc !== 0 && paperWinPerc < 0) {
+  } else if (paperWinPerc > 0) {
+    document.getElementById(
+      "paperWinPercentage"
+    ).textContent = `${paperWinPercentage()} %`;
   } else {
-    document.getElementById("rockTiePercentage").textContent = "0 %";
+    document.getElementById("paperWinPercentage").textContent = "0 %";
+  }
+}
+function checkTiesPaper() {
+  let paperTiePerc = paperTiesPercentage();
+  if (paperTiePerc !== 0 && paperTiePerc < 0) {
+  } else if (paperTiePerc > 0) {
+    document.getElementById(
+      "paperTiesPercentage"
+    ).textContent = `${paperTiesPercentage()} %`;
+  } else {
+    document.getElementById("paperTiesPercentage").textContent = "0 %";
+  }
+}
+function checkLossPaper() {
+  let paperLossPerc = paperLossPercentage();
+  if (paperLossPerc !== 0 && paperLossPerc < 0) {
+  } else if (paperLossPerc > 0) {
+    document.getElementById(
+      "paperLossPercentage"
+    ).textContent = `${paperLossPercentage()} %`;
+  } else {
+    document.getElementById("paperLossPercentage").textContent = "0 %";
+  }
+}
+function checkWinScissors() {
+  let scissorWinPerc = scissorWinPercentage();
+  if (scissorWinPerc !== 0 && scissorWinPerc < 0) {
+  } else if (scissorWinPerc > 0) {
+    document.getElementById(
+      "Percentage"
+    ).textContent = `${scissorWinPercentage()} %`;
+  } else {
+    document.getElementById("scissorsWinPercentage").textContent = "0 %";
+  }
+}
+function checkTiesScissors() {
+  let scissorTiesPerc = scissorTiesPercentage();
+  if (scissorTiesPerc !== 0 && scissorTiesPerc < 0) {
+  } else if (scissorTiesPerc > 0) {
+    document.getElementById(
+      "scissorsTiesPercentage"
+    ).textContent = `${scissorWinPercentage()} %`;
+  } else {
+    document.getElementById("scissorsTiesPercentage").textContent = "0 %";
+  }
+}
+function checkLossScissors() {
+  let scissorLossPerc = scissorLossPercentage();
+  if (scissorLossPerc !== 0 && scissorLossPerc < 0) {
+  } else if (scissorLossPerc > 0) {
+    document.getElementById(
+      "scissorsLossPercentage"
+    ).textContent = `${scissorTiesPercentage()} %`;
+  } else {
+    document.getElementById("scissorsLossPercentage").textContent = "0 %";
   }
 }
 function playedRock() {
@@ -101,12 +191,6 @@ function playedRock() {
   rockWinPercentage();
   rockLossPercentage();
   rockTiePercentage();
-  paperWinPercentage();
-  paperLossPercentage();
-  paperTiesPercentage();
-  scissorTiesPercentage();
-  scissorWinPercentage();
-  scissorLossPercentage();
   document.getElementById("result").textContent = `you ${result}`;
   document.getElementById("youPlayed").textContent = `You played ${playerMove}`;
   document.getElementById(
@@ -137,15 +221,9 @@ function playedPaper() {
   overallWinPercentage();
   overallTiePercentage();
   overallLossPercentage();
-  rockWinPercentage();
-  rockLossPercentage();
-  rockTiePercentage();
   paperWinPercentage();
   paperLossPercentage();
   paperTiesPercentage();
-  scissorTiesPercentage();
-  scissorWinPercentage();
-  scissorLossPercentage();
   document.getElementById("result").textContent = `you ${result}`;
   document.getElementById("youPlayed").textContent = `You played ${playerMove}`;
   document.getElementById(
@@ -177,12 +255,6 @@ function playedScissors() {
   overallWinPercentage();
   overallTiePercentage();
   overallLossPercentage();
-  rockWinPercentage();
-  rockLossPercentage();
-  rockTiePercentage();
-  paperWinPercentage();
-  paperLossPercentage();
-  paperTiesPercentage();
   scissorTiesPercentage();
   scissorWinPercentage();
   scissorLossPercentage();
@@ -227,16 +299,20 @@ function scissorsScore() {
     "scissorsLosses"
   ).textContent = `${clickedScissors.losses}`;
 }
+
 function rockWinPercentage() {
-  let rockWinPerc = (
+  let rockWinPerc = 0;
+  rockWinPerc = (
     (clickedRock.wins /
       (clickedRock.wins + clickedRock.losses + clickedRock.ties)) *
     100
   ).toFixed(0);
   document.getElementById("rockWinPercentage").textContent = `${rockWinPerc} %`;
+  return rockWinPerc;
 }
 function rockTiePercentage() {
-  let rockTiePerc = (
+  let rockTiePerc = 0;
+  rockTiePerc = (
     (clickedRock.ties /
       (clickedRock.wins + clickedRock.losses + clickedRock.ties)) *
     100
@@ -244,9 +320,11 @@ function rockTiePercentage() {
   document.getElementById(
     "rockTiesPercentage"
   ).textContent = `${rockTiePerc} %`;
+  return rockTiePerc;
 }
 function rockLossPercentage() {
-  let rockLossPerc = (
+  let rockLossPerc = 0;
+  rockLossPerc = (
     (clickedRock.losses /
       (clickedRock.wins + clickedRock.losses + clickedRock.ties)) *
     100
@@ -254,9 +332,12 @@ function rockLossPercentage() {
   document.getElementById(
     "rockLossPercentage"
   ).textContent = `${rockLossPerc} %`;
+  return rockLossPerc;
 }
+
 function paperWinPercentage() {
-  let paperWinPerc = (
+  let paperWinPerc = 0;
+  paperWinPerc = (
     (clickedPaper.wins /
       (clickedPaper.wins + clickedPaper.losses + clickedPaper.ties)) *
     100
@@ -264,9 +345,11 @@ function paperWinPercentage() {
   document.getElementById(
     "paperWinPercentage"
   ).textContent = `${paperWinPerc} %`;
+  return paperWinPerc;
 }
 function paperLossPercentage() {
-  let paperLossPerc = (
+  let paperLossPerc = 0;
+  paperLossPerc = (
     (clickedPaper.losses /
       (clickedPaper.wins + clickedPaper.losses + clickedPaper.ties)) *
     100
@@ -274,9 +357,11 @@ function paperLossPercentage() {
   document.getElementById(
     "paperLossPercentage"
   ).textContent = `${paperLossPerc} %`;
+  return paperLossPerc;
 }
 function paperTiesPercentage() {
-  let paperTiePerc = (
+  let paperTiePerc = 0;
+  paperTiePerc = (
     (clickedPaper.ties /
       (clickedPaper.wins + clickedPaper.losses + clickedPaper.ties)) *
     100
@@ -284,9 +369,12 @@ function paperTiesPercentage() {
   document.getElementById(
     "paperTiesPercentage"
   ).textContent = `${paperTiePerc} %`;
+  return paperTiePerc;
 }
+
 function scissorWinPercentage() {
-  let scissorWinPerc = (
+  let scissorWinPerc = 0;
+  scissorWinPerc = (
     (clickedScissors.wins /
       (clickedScissors.wins + clickedScissors.losses + clickedScissors.ties)) *
     100
@@ -294,9 +382,11 @@ function scissorWinPercentage() {
   document.getElementById(
     "scissorsWinPercentage"
   ).textContent = `${scissorWinPerc} %`;
+  return scissorWinPerc;
 }
 function scissorTiesPercentage() {
-  let scissorTiesPerc = (
+  let scissorTiesPerc = 0;
+  scissorTiesPerc = (
     (clickedScissors.ties /
       (clickedScissors.wins + clickedScissors.losses + clickedScissors.ties)) *
     100
@@ -304,9 +394,11 @@ function scissorTiesPercentage() {
   document.getElementById(
     "scissorsTiesPercentage"
   ).textContent = `${scissorTiesPerc} %`;
+  return scissorTiesPerc;
 }
 function scissorLossPercentage() {
-  let scissorLossPerc = (
+  let scissorLossPerc = 0;
+  scissorLossPerc = (
     (clickedScissors.losses /
       (clickedScissors.wins + clickedScissors.losses + clickedScissors.ties)) *
     100
@@ -314,7 +406,9 @@ function scissorLossPercentage() {
   document.getElementById(
     "scissorsLossPercentage"
   ).textContent = `${scissorLossPerc} %`;
+  return scissorLossPerc;
 }
+
 function overallWins() {
   let mainWins = (document.getElementById("wins").textContent = `${
     clickedRock.wins + clickedPaper.wins + clickedScissors.wins
@@ -384,6 +478,7 @@ function overallTiePercentage() {
   ).textContent = `${overallPercentageTies} %`;
   return overallPercentageTies;
 }
+
 function resetScore() {
   clickedPaper = {
     wins: 0,
@@ -419,9 +514,15 @@ function resetScore() {
   scissorTiesPercentage();
   scissorWinPercentage();
   scissorLossPercentage();
-  checkIfRockWinPercNaN();
-  checkIfRockLossPercNaN();
-  checkIfRockTiesPercNaN();
+  checkWin();
+  checkTies();
+  checkLoss();
+  checkWinPaper();
+  checkTiesPaper();
+  checkLossPaper();
+  checkWinScissors();
+  checkTiesScissors();
+  checkLossScissors();
   localStorage.removeItem("playedRock");
   localStorage.removeItem("playedPaper");
   localStorage.removeItem("playedScissors");
