@@ -137,7 +137,7 @@ function checkWinScissors() {
   if (scissorWinPerc !== 0 && scissorWinPerc < 0) {
   } else if (scissorWinPerc > 0) {
     document.getElementById(
-      "Percentage"
+      "scissorsWinPercentage"
     ).textContent = `${scissorWinPercentage()} %`;
   } else {
     document.getElementById("scissorsWinPercentage").textContent = "0.0 %";

@@ -11,6 +11,7 @@ body {
   flex-direction: row;
 }
 .name {
+  margin: 0vh;
   position: absolute;
   top: 2vh;
   left: auto;
@@ -159,19 +160,9 @@ body {
 #lossPercentage {
   background-color: rgb(179, 77, 77);
 }
+#scissorScore-button-wrapper,
+#paperScore-button-wrapper,
 #rockScore-button-wrapper {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-#paperScore-button-wrapper {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-#scissorScore-button-wrapper {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -195,6 +186,27 @@ body {
   height: 5vh;
   width: 5vh;
   border-radius: 1vh;
+}
+#rockScoreWrapper,
+#paperScoreWrapper,
+#scissorScoreWrapper {
+  height: 40vh;
+  width: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#paperWinPercentage,
+#paperLossPercentage,
+#paperTiesPercentage,
+#rockTiesPercentage,
+#rockLossPercentage,
+#rockWinPercentage,
+#scissorsWinPercentage,
+#scissorsLossPercentage,
+#scissorsTiesPercentage {
+  margin: 1vh;
 }
 /* #antiEpilepsyButton {
   position: absolute;
