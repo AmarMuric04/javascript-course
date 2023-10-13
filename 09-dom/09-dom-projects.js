@@ -1,7 +1,9 @@
 function subscribed() {
-  if (document.querySelector("button") === "Subscibed") {
+  const subscribe = document.querySelector("#js-subscribe-button");
+  if (subscribe.innerHTML === "Subscribe") {
+    subscribe.innerHTML = "Subscribed";
   } else {
-    document.querySelector("button").innerHTML = "Subscribed";
+    subscribe.innerHTML = "Subscribe";
   }
 }
-console.log(document.querySelector("button"));
+// function z
