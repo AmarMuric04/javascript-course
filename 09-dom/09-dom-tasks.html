@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks</title>
+  </head>
+  <body>
+    <button onclick="changeText()">9a</button>
+    <button id="js-secondButton">9a</button>
+
+    <button onclick="youPlayed('Heads')">Heads</button>
+    <button onclick="youPlayed('Tails')">Tails</button>
+    <p id="headsTailsParagraph"></p>
+
+    <input
+      placeholder="Name"
+      id="js-input"
+      onkeydown="checkNameOnEnter(event)"
+    />
+    <button onclick="checkName()">Submit</button>
+    <p id="js-name"></p>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Order over $40 = FREE shipping.</p>
+    <input
+      placeholder="Cost of order"
+      id="js-inputTwo"
+      onkeydown="enterKey(event)"
+    /><button onclick="checkThePrice()">Calculate</button>
+    <p id="js-cost">2</p>
+    <input
+      placeholder="Type something"
+      id="js-inputThree"
+      onkeyup="followTheInput()"
+    />
+    <p id="js-inputFollower"></p>
+    <script src="09-dom-tasks.js"></script>
+  </body>
+</html>

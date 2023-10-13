@@ -15,8 +15,14 @@
     <p>Amazon Shipping Calculator</p>
     <p>Orders under $40 = +$10 shipping.</p>
     <p>Order over $40 = FREE shipping.</p>
-    <div><input /> <button>Calculate</button></div>
+    <input
+      placeholder="Cost of order"
+      id="js-input"
+      onkeydown="enterKey(event)"
+    /><button onclick="checkThePrice()">Calculate</button>
+    <p id="js-cost"></p>
     <a href="">CSS version of these projects</a>
     <script src="09-dom-projects.js"></script>
   </body>
 </html>
+z

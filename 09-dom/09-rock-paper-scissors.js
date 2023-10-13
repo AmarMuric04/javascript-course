@@ -58,11 +58,10 @@ function playGame(playerMove) {
     }
     updateScore();
   }
-  resultElement();
-  movesElement();
-  alert(
-    `you picked ${playerMove}, Computer picked ${computerMove}, you ${result}`
-  );
+  document.querySelector(
+    "#js-moves"
+  ).textContent = `You played ${playerMove} and computer played ${computerMove}`;
+  document.querySelector("#js-result").textContent = `You ${result}`;
 }
 function resetScore() {
   (score.wins = 0),
@@ -71,14 +70,6 @@ function resetScore() {
     (document.querySelector(
       "#js-score"
     ).textContent = `Wins: ${score.wins}, Ties: ${score.ties}, Losses: ${score.losses}`);
-}
-function resultElement() {
-  document.querySelector("#js-result").textContent = `You ${result}`;
-}
-function movesElement() {
-  document.querySelector(
-    "#js-moves"
-  ).textContent = `You played ${playerMove} and computer played ${computerMove}`;
 }
 function updateScore() {
   document.querySelector(
