@@ -208,7 +208,7 @@ function playedRock() {
   document.getElementById("youPlayed").textContent = `You played ${playerMove}`;
   document.getElementById(
     "compPlayed"
-  ).textContent = `Computer played ${computerMove()}`;
+  ).textContent = `Computer played ${pickComputerMove}`;
 }
 
 function playedPaper() {
@@ -254,7 +254,7 @@ function playedPaper() {
   document.getElementById("youPlayed").textContent = `You played ${playerMove}`;
   document.getElementById(
     "compPlayed"
-  ).textContent = `Computer played ${computerMove()}`;
+  ).textContent = `Computer played ${pickComputerMove}`;
 }
 
 function playedScissors() {
@@ -272,6 +272,7 @@ function playedScissors() {
     clickedScissors.ties += 1;
   }
   let mainWins = overallWins();
+  // mainWins = 1000 ? document.querySelector("body").style.backgroundImage = ""
   mainWins >= 100
     ? (document.getElementById("wins").style.width = "7vh")
     : (document.getElementById("wins").style.width = "5vh");
@@ -300,7 +301,7 @@ function playedScissors() {
   document.getElementById("youPlayed").textContent = `You played ${playerMove}`;
   document.getElementById(
     "compPlayed"
-  ).textContent = `Computer played ${computerMove()}`;
+  ).textContent = `Computer played ${pickComputerMove}`;
 }
 
 function computerMove() {
