@@ -1,3 +1,7 @@
+let calculation = localStorage.getItem("calculations");
+document.querySelector("#js-calculation").textContent = `${calculation}`;
 function calculator(value) {
-  document.querySelector("#js-calculator").textContent = `${value}`;
+  calculation += value;
+  document.querySelector("#js-calculation").textContent = `${calculation}`;
+  localStorage.setItem("calculations", calculation);
 }
