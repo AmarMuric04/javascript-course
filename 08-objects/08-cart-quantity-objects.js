@@ -1,8 +1,7 @@
 /*1.0
 Added localStorage to cart quantity, when the site is refreshed, quantity of the cart stays the same. */
 
-const cartQuantity = JSON.parse(localStorage.getItem("cart"));
-
+cartQuantity = JSON.parse(localStorage.getItem("cart"));
 function changeQuantity(num) {
   if (num === 1) {
     if (cartQuantity.quantity >= 10) {
