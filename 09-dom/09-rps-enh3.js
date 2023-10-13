@@ -41,7 +41,7 @@ function checkIfWinsNaN() {
       "winPercentage"
     ).textContent = `${overallWinPercentage()} %`;
   } else {
-    document.getElementById("winPercentage").textContent = "0 %";
+    document.getElementById("winPercentage").textContent = "0.0 %";
   }
 }
 function checkIfTiesNaN() {
@@ -52,7 +52,7 @@ function checkIfTiesNaN() {
       "tiePercentage"
     ).textContent = `${overallTiePercentage()} %`;
   } else {
-    document.getElementById("tiePercentage").textContent = `0 %`;
+    document.getElementById("tiePercentage").textContent = `0.0 %`;
   }
 }
 function checkIfLossesNaN() {
@@ -63,7 +63,7 @@ function checkIfLossesNaN() {
       "lossPercentage"
     ).textContent = `${overallLossPercentage()} %`;
   } else {
-    document.getElementById("lossPercentage").textContent = "0 %";
+    document.getElementById("lossPercentage").textContent = "0.0 %";
   }
 }
 function checkWin() {
@@ -74,7 +74,7 @@ function checkWin() {
       "rockWinPercentage"
     ).textContent = `${rockWinPercentage()} %`;
   } else {
-    document.getElementById("rockWinPercentage").textContent = "0 %";
+    document.getElementById("rockWinPercentage").textContent = "0.0 %";
   }
 }
 function checkTies() {
@@ -85,7 +85,7 @@ function checkTies() {
       "rockTiesPercentage"
     ).textContent = `${rockTiePercentage()} %`;
   } else {
-    document.getElementById("rockTiesPercentage").textContent = "0 %";
+    document.getElementById("rockTiesPercentage").textContent = "0.0 %";
   }
 }
 function checkLoss() {
@@ -96,7 +96,7 @@ function checkLoss() {
       "rockLossPercentage"
     ).textContent = `${rockLossPercentage()} %`;
   } else {
-    document.getElementById("rockLossPercentage").textContent = "0 %";
+    document.getElementById("rockLossPercentage").textContent = "0.0 %";
   }
 }
 function checkWinPaper() {
@@ -107,7 +107,7 @@ function checkWinPaper() {
       "paperWinPercentage"
     ).textContent = `${paperWinPercentage()} %`;
   } else {
-    document.getElementById("paperWinPercentage").textContent = "0 %";
+    document.getElementById("paperWinPercentage").textContent = "0.0 %";
   }
 }
 function checkTiesPaper() {
@@ -118,7 +118,7 @@ function checkTiesPaper() {
       "paperTiesPercentage"
     ).textContent = `${paperTiesPercentage()} %`;
   } else {
-    document.getElementById("paperTiesPercentage").textContent = "0 %";
+    document.getElementById("paperTiesPercentage").textContent = "0.0 %";
   }
 }
 function checkLossPaper() {
@@ -129,7 +129,7 @@ function checkLossPaper() {
       "paperLossPercentage"
     ).textContent = `${paperLossPercentage()} %`;
   } else {
-    document.getElementById("paperLossPercentage").textContent = "0 %";
+    document.getElementById("paperLossPercentage").textContent = "0.0 %";
   }
 }
 function checkWinScissors() {
@@ -140,7 +140,7 @@ function checkWinScissors() {
       "Percentage"
     ).textContent = `${scissorWinPercentage()} %`;
   } else {
-    document.getElementById("scissorsWinPercentage").textContent = "0 %";
+    document.getElementById("scissorsWinPercentage").textContent = "0.0 %";
   }
 }
 function checkTiesScissors() {
@@ -151,7 +151,7 @@ function checkTiesScissors() {
       "scissorsTiesPercentage"
     ).textContent = `${scissorWinPercentage()} %`;
   } else {
-    document.getElementById("scissorsTiesPercentage").textContent = "0 %";
+    document.getElementById("scissorsTiesPercentage").textContent = "0.0 %";
   }
 }
 function checkLossScissors() {
@@ -162,7 +162,7 @@ function checkLossScissors() {
       "scissorsLossPercentage"
     ).textContent = `${scissorTiesPercentage()} %`;
   } else {
-    document.getElementById("scissorsLossPercentage").textContent = "0 %";
+    document.getElementById("scissorsLossPercentage").textContent = "0.0 %";
   }
 }
 function playedRock() {
@@ -179,6 +179,19 @@ function playedRock() {
     result = "Won";
     clickedRock.losses += 1;
   }
+  let mainWins = overallWins();
+  mainWins >= 100
+    ? (document.getElementById("wins").style.width = "7vh")
+    : (document.getElementById("wins").style.width = "5vh");
+  let mainTies = overallTies();
+  mainTies >= 100
+    ? (document.getElementById("ties").style.width = "7vh")
+    : (document.getElementById("ties").style.width = "5vh");
+  let mainLosses = overallLosses();
+  mainLosses >= 100
+    ? (document.getElementById("losses").style.width = "7vh")
+    : (document.getElementById("losses").style.width = "5vh");
+
   localStorage.setItem("playedRock", JSON.stringify(clickedRock));
   // changeColor();
   rockScore();
@@ -212,6 +225,19 @@ function playedPaper() {
     result = "Lost";
     clickedPaper.losses += 1;
   }
+  let mainWins = overallWins();
+  mainWins >= 100
+    ? (document.getElementById("wins").style.width = "7vh")
+    : (document.getElementById("wins").style.width = "5vh");
+  let mainTies = overallTies();
+  mainTies >= 100
+    ? (document.getElementById("ties").style.width = "7vh")
+    : (document.getElementById("ties").style.width = "5vh");
+  let mainLosses = overallLosses();
+  mainLosses >= 100
+    ? (document.getElementById("losses").style.width = "7vh")
+    : (document.getElementById("losses").style.width = "5vh");
+
   localStorage.setItem("playedPaper", JSON.stringify(clickedPaper));
   // changeColor();
   paperScore();
@@ -245,6 +271,18 @@ function playedScissors() {
     result = "Tied";
     clickedScissors.ties += 1;
   }
+  let mainWins = overallWins();
+  mainWins >= 100
+    ? (document.getElementById("wins").style.width = "7vh")
+    : (document.getElementById("wins").style.width = "5vh");
+  let mainTies = overallTies();
+  mainTies >= 100
+    ? (document.getElementById("ties").style.width = "7vh")
+    : (document.getElementById("ties").style.width = "5vh");
+  let mainLosses = overallLosses();
+  mainLosses >= 100
+    ? (document.getElementById("losses").style.width = "7vh")
+    : (document.getElementById("losses").style.width = "5vh");
 
   localStorage.setItem("playedScissors", JSON.stringify(clickedScissors));
   // changeColor();
@@ -306,7 +344,7 @@ function rockWinPercentage() {
     (clickedRock.wins /
       (clickedRock.wins + clickedRock.losses + clickedRock.ties)) *
     100
-  ).toFixed(0);
+  ).toFixed(1);
   document.getElementById("rockWinPercentage").textContent = `${rockWinPerc} %`;
   return rockWinPerc;
 }
@@ -316,7 +354,7 @@ function rockTiePercentage() {
     (clickedRock.ties /
       (clickedRock.wins + clickedRock.losses + clickedRock.ties)) *
     100
-  ).toFixed(0);
+  ).toFixed(1);
   document.getElementById(
     "rockTiesPercentage"
   ).textContent = `${rockTiePerc} %`;
@@ -328,7 +366,7 @@ function rockLossPercentage() {
     (clickedRock.losses /
       (clickedRock.wins + clickedRock.losses + clickedRock.ties)) *
     100
-  ).toFixed(0);
+  ).toFixed(1);
   document.getElementById(
     "rockLossPercentage"
   ).textContent = `${rockLossPerc} %`;
@@ -341,7 +379,7 @@ function paperWinPercentage() {
     (clickedPaper.wins /
       (clickedPaper.wins + clickedPaper.losses + clickedPaper.ties)) *
     100
-  ).toFixed(0);
+  ).toFixed(1);
   document.getElementById(
     "paperWinPercentage"
   ).textContent = `${paperWinPerc} %`;
@@ -353,7 +391,7 @@ function paperLossPercentage() {
     (clickedPaper.losses /
       (clickedPaper.wins + clickedPaper.losses + clickedPaper.ties)) *
     100
-  ).toFixed(0);
+  ).toFixed(1);
   document.getElementById(
     "paperLossPercentage"
   ).textContent = `${paperLossPerc} %`;
@@ -365,7 +403,7 @@ function paperTiesPercentage() {
     (clickedPaper.ties /
       (clickedPaper.wins + clickedPaper.losses + clickedPaper.ties)) *
     100
-  ).toFixed(0);
+  ).toFixed(1);
   document.getElementById(
     "paperTiesPercentage"
   ).textContent = `${paperTiePerc} %`;
@@ -378,7 +416,7 @@ function scissorWinPercentage() {
     (clickedScissors.wins /
       (clickedScissors.wins + clickedScissors.losses + clickedScissors.ties)) *
     100
-  ).toFixed(0);
+  ).toFixed(1);
   document.getElementById(
     "scissorsWinPercentage"
   ).textContent = `${scissorWinPerc} %`;
@@ -390,7 +428,7 @@ function scissorTiesPercentage() {
     (clickedScissors.ties /
       (clickedScissors.wins + clickedScissors.losses + clickedScissors.ties)) *
     100
-  ).toFixed(0);
+  ).toFixed(1);
   document.getElementById(
     "scissorsTiesPercentage"
   ).textContent = `${scissorTiesPerc} %`;
@@ -402,7 +440,7 @@ function scissorLossPercentage() {
     (clickedScissors.losses /
       (clickedScissors.wins + clickedScissors.losses + clickedScissors.ties)) *
     100
-  ).toFixed(0);
+  ).toFixed(1);
   document.getElementById(
     "scissorsLossPercentage"
   ).textContent = `${scissorLossPerc} %`;
@@ -438,7 +476,7 @@ function overallWinPercentage() {
   overallPercentageWins = (
     (mainWins / (mainWins + mainTies + mainLosses)) *
     100
-  ).toFixed(0);
+  ).toFixed(1);
   document.getElementById(
     "winPercentage"
   ).textContent = `${overallPercentageWins} %`;
@@ -455,7 +493,7 @@ function overallLossPercentage() {
   overallPercentageLosses = (
     (mainLosses / (mainWins + mainTies + mainLosses)) *
     100
-  ).toFixed(0);
+  ).toFixed(1);
   document.getElementById(
     "lossPercentage"
   ).textContent = `${overallPercentageLosses} %`;
@@ -472,7 +510,7 @@ function overallTiePercentage() {
   overallPercentageTies = (
     (mainTies / (mainWins + mainTies + mainLosses)) *
     100
-  ).toFixed(0);
+  ).toFixed(1);
   document.getElementById(
     "tiePercentage"
   ).textContent = `${overallPercentageTies} %`;
@@ -523,6 +561,10 @@ function resetScore() {
   checkWinScissors();
   checkTiesScissors();
   checkLossScissors();
+
+  document.getElementById("wins").style.width = "5vh";
+  document.getElementById("losses").style.width = "5vh";
+  document.getElementById("ties").style.width = "5vh";
   localStorage.removeItem("playedRock");
   localStorage.removeItem("playedPaper");
   localStorage.removeItem("playedScissors");
@@ -542,3 +584,16 @@ function resetScore() {
 //     document.getElementById("resultWrapper").style.backgroundColor = "orange";
 //   }
 // }
+
+let mainWins = overallWins();
+mainWins >= 100
+  ? (document.getElementById("wins").style.width = "7vh")
+  : (document.getElementById("wins").style.width = "5vh");
+let mainTies = overallTies();
+mainTies >= 100
+  ? (document.getElementById("ties").style.width = "7vh")
+  : (document.getElementById("ties").style.width = "5vh");
+let mainLosses = overallLosses();
+mainLosses >= 100
+  ? (document.getElementById("losses").style.width = "7vh")
+  : (document.getElementById("losses").style.width = "5vh");
