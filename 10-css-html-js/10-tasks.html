@@ -26,6 +26,20 @@
     <button class="second-onOff-three" onclick="thirdOnOffSingle()">
       Tech
     </button>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <p>
+      <input
+        placeholder="Cost of order"
+        class="js-input cost-input"
+        onkeydown="enterKey(event)"
+      /><button onclick="checkThePrice()" class="calculate-button">
+        Calculate
+      </button>
+    </p>
+    <p id="js-cost"></p>
     <script src="10-tasks.js"></script>
   </body>
 </html>
