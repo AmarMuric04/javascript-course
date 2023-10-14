@@ -1,0 +1,53 @@
+body {
+  font-family: arial;
+}
+.addToCart {
+  background-color: rgb(255, 216, 20);
+  border: none;
+  padding: 0vh 1vh;
+  width: 19vh;
+  height: 4vh;
+  border-radius: 2vh;
+  font-size: 2vh;
+}
+.requestNow {
+  font-weight: bold;
+  font-size: 1.5vh;
+  background-color: black;
+  border: none;
+  height: 5.5vh;
+  padding: 0vh 2vh;
+  border-radius: 1vh;
+  color: white;
+}
+.scheduleForLater {
+  font-weight: bold;
+  font-size: 1.5vh;
+  background-color: rgb(230, 230, 230);
+  border: none;
+  height: 5.5vh;
+  padding: 0vh 2vh;
+  border-radius: 1vh;
+}
+div {
+  margin: 2vh 0vh;
+}
+.second-onOff,
+.second-onOff-two,
+.second-onOff-three,
+.onOff-original,
+.onOff,
+.onOff-two,
+.onOff-three {
+  background-color: black;
+  color: white;
+  padding: 1vh 2vh;
+  border-radius: 1vh;
+  font-size: 2vh;
+  border: none;
+  cursor: pointer;
+}
+.is-toggled {
+  background-color: rgb(230, 230, 230);
+  color: black;
+}

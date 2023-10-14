@@ -6,22 +6,24 @@ body {
 }
 #title {
   font-weight: bold;
-  font-size: 4vh;
+  font-size: 3vh;
 }
 .moveButton {
   text-align: center;
-  width: 15vh;
-  height: 15vh;
+  width: 13vh;
+  height: 13vh;
   border: 0.5vh solid white;
-  border-radius: 7.5vh;
+  border-radius: 6.5vh;
   background-color: black;
-  font-size: 7vh;
-  margin: 1vh 2vh 7vh 2vh;
+  font-size: 6vh;
+  margin: 1vh 1vh 5vh 0vh;
   cursor: pointer;
 }
 .resetScore {
-  padding: 0.5vh 2vh;
+  padding: 0.5vh 1vh;
   border: 0.5vh solid white;
+  font-size: 1.5vh;
+  cursor: pointer;
 }
 #js-result {
   font-weight: bold;
