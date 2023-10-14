@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Projects</title>
+    <link rel="stylesheet" href="10-dom-projects.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button class="subscribe-button js-subscribe-button" onclick="subscribed()">
+      Subscribe
+    </button>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <p>
+      <input
+        placeholder="Cost of order"
+        class="js-input cost-input"
+        onkeydown="enterKey(event)"
+      /><button onclick="checkThePrice()" class="calculate-button">
+        Calculate
+      </button>
+    </p>
+    <p id="js-cost"></p>
+    <p id="rock-paper-scissors-title">Rock Paper Scissors</p>
+    <a href="http://127.0.0.1:5500/09-dom/09-rock-paper-scissors.html"
+      >Click here</a
+    >
+    <script src="10-dom-projects.js"></script>
+  </body>
+</html>

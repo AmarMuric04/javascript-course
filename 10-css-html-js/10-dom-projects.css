@@ -1,0 +1,59 @@
+body {
+  font-family: Arial;
+  padding-bottom: 110px;
+}
+.subscribe-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 35px;
+}
+.calculate-button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.cost-input {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 15px;
+  margin-right: 4px;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+#rock-paper-scissors-title {
+  margin-top: 55px;
+}
+.subscribedNewClass {
+  background-color: rgb(240, 240, 240);
+  color: black;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 35px;
+}
