@@ -1,5 +1,5 @@
-const subscribe = document.querySelector(".js-subscribe-button");
 function subscribed() {
+  subscribe = document.querySelector(".js-subscribe-button");
   if (subscribe.innerText === "Subscribe") {
     subscribe.textContent = "Subscribed";
     subscribe.classList.add("subscribedNewClass");

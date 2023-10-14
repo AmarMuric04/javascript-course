@@ -1,0 +1,35 @@
+body {
+  background-color: black;
+  margin: none;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#title {
+  font-weight: bold;
+  font-size: 4vh;
+}
+.moveButton {
+  text-align: center;
+  width: 15vh;
+  height: 15vh;
+  border: 0.5vh solid white;
+  border-radius: 7.5vh;
+  background-color: black;
+  font-size: 7vh;
+  margin: 1vh 2vh 7vh 2vh;
+  cursor: pointer;
+}
+.resetScore {
+  padding: 0.5vh 2vh;
+  border: 0.5vh solid white;
+}
+#js-result {
+  font-weight: bold;
+  font-size: 3vh;
+}
+.span {
+  font-size: 5vh;
+}
+#js-moves {
+  margin: 2vh 0vh 5vh 0vh;
+}
