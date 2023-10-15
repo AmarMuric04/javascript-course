@@ -59,3 +59,10 @@ for (let i = 0; index < todoList.length; i++) {
 //   total += num;
 // }
 // console.log(total); //we created a variable to store the result (total), then we made a loop that goes thru the array items one by one, and in the end it adds them up
+const nums = [1, 1, 3]; //make new array [2, 2, 6]
+const numsDoubled = [];
+for (i = 0; i < nums.length; i++) {
+  const num = nums[i];
+  numsDoubled.push(num * 2);
+}
+console.log(numsDoubled);
