@@ -50,3 +50,12 @@ for (let i = 0; index < todoList.length; i++) {
 }*/
 /* i means index */
 
+// const nums = [1, 1, 3]; //add these 3
+
+// let total = 0;
+
+// for (let i = 0; i < nums.length; i++) {
+//   const num = nums[i];
+//   total += num;
+// }
+// console.log(total); //we created a variable to store the result (total), then we made a loop that goes thru the array items one by one, and in the end it adds them up
