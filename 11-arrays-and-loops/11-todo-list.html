@@ -13,11 +13,12 @@
       onkeydown="onEnter(event)"
     /><button onclick="addTodo()">Add</button>
     <p>To do list Practice 2</p>
-    <input placeholder="Todo name" class="js-name-input-two" /><button
-      onclick="addTodo()"
-    >
-      Add
-    </button>
+    <input
+      placeholder="Todo name"
+      class="js-name-input"
+      onkeydown="onEnter(event)"
+    /><button onclick="addTodo()">Add</button>
+    <div class="js-todo-list"></div>
     <script src="11-todo-list.js"></script>
   </body>
 </html>
