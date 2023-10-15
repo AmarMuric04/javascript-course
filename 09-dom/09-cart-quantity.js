@@ -1,3 +1,5 @@
+/*10.14.2023 -> This version of Cart Quantity shwos the quantity on the screen*/
+
 const cartQuantity = JSON.parse(localStorage.getItem("cartQuantityNow"));
 function updateCartQuantity(value) {
   if (value === 1) {
