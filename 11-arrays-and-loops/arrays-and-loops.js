@@ -18,7 +18,7 @@
 // function arraySwap(array) {
 //   let firstNum = array[0];
 //   let lastNum = array[array.length - 1];
-
+// testing
 //   array[0] = lastNum;
 //   array[array.length - 1] = firstNum;
 
