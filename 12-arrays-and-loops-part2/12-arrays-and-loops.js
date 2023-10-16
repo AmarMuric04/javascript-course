@@ -1,18 +1,11 @@
-const todoList = [
-  {
-    name: "make dinner",
-    dueDate: "2022-12-22",
-  },
-  {
-    name: "wash dishes",
-    dueDate: "2022-12-22",
-  },
-];
-
+const todoList = JSON.parse(localStorage.getItem("todo"));
 renderTodoList();
 
 function renderTodoList() {
   let todoListHTML = "";
+
+  todoList.name = "";
+  todoList.dueDAte = "";
 
   for (let i = 0; i < todoList.length; i++) {
     const todoObject = todoList[i];
@@ -29,15 +22,30 @@ function renderTodoList() {
   }
 
   document.querySelector(".js-todo-list").innerHTML = todoListHTML;
+  localStorage.setItem("todo", JSON.stringify(todoList));
 }
 
 function addTodo() {
   const inputElement = document.querySelector(".js-name-input");
-  const name = inputElement.value;
 
   const dateInputElement = document.querySelector(".js-due-date-input");
   const dueDate = dateInputElement.value;
-
+  const name = inputElement.value;
+  if (name === "" && dueDate !== "") {
+    alert("Write something in the input");
+    return;
+  } else if (dueDate === "" && name !== "") {
+    alert("select a date");
+    return;
+  } else if (name === "" && dueDate === "") {
+    alert(
+      "Everything is empty, \nWrite something in the input, and then select a date"
+    );
+    return;
+  } else if (!isNaN(name)) {
+    alert("Are you writting in binary? \nUse words.");
+    return;
+  }
   todoList.push({
     //name: name,
     //dueDate: dueDate,
