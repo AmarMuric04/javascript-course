@@ -67,19 +67,19 @@
 // console.log(foods);
 
 //FIZZBUZZ
-let i = 0;
-while (i < 20) {
-  i++;
-  if (i % 3 === 0 && i % 5 === 0) {
-    console.log("FizzBuzz");
-  } else if (i % 3 === 0 && i % 5 !== 0) {
-    console.log("Fizz");
-  } else if (i % 5 === 0 && i % 3 !== 0) {
-    console.log("Buzz");
-  } else {
-    console.log(i);
-  }
-}
+// let i = 0;
+// while (i < 20) {
+//   i++;
+//   if (i % 3 === 0 && i % 5 === 0) {
+//     console.log("FizzBuzz");
+//   } else if (i % 3 === 0 && i % 5 !== 0) {
+//     console.log("Fizz");
+//   } else if (i % 5 === 0 && i % 3 !== 0) {
+//     console.log("Buzz");
+//   } else {
+//     console.log(i);
+//   }
+// }
 // for (i = 0; i <= 20; i++) {
 //   if (i % 3 === 0 && i % 5 === 0) {
 //   } else if (i % 3 === 0 && i % 5 !== 0) {
@@ -101,3 +101,15 @@ while (i < 20) {
 //     console.log(i);
 //   }
 // }
+function findIndex(array, word) {
+  let index = -1;
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === word) {
+      index = i;
+      break;
+    }
+  }
+  console.log(index);
+}
+findIndex(["not", "found", "search", "search"], "search");
