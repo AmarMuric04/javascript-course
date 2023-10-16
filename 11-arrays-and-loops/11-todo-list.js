@@ -11,10 +11,8 @@ function todoList() {
   document.querySelector(".js-todo-list").innerHTML = `${todolistHTML}`;
 }
 function addTodo() {
-  const inputElement = document.querySelector(".js-name-input");
-  let name = inputElement.value;
-  todolist.push(name);
-  console.log(todolist);
+  const inputElement = document.querySelector(".js-name-input").value;
+  todolist.push(inputElement);
 
   inputElement.value = " ";
 }
