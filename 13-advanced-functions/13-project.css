@@ -1,0 +1,37 @@
+body {
+    background-color: black;
+    margin: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #title {
+    font-weight: bold;
+    font-size: 3vh;
+  }
+  .moveButton {
+    text-align: center;
+    width: 20vh;
+    height: 20vh;
+    border: 0.5vh solid white;
+    border-radius: 20vh;
+    background-color: black;
+    font-size: 6vh;
+    margin: 1vh 1vh 5vh 0vh;
+    cursor: pointer;
+  }
+  .resetScore,.autoPlay {
+    padding: 0.5vh 1vh;
+    border: 0.5vh solid white;
+    font-size: 2vh;
+    cursor: pointer;
+  }
+  #js-result {
+    font-weight: bold;
+    font-size: 3vh;
+  }
+  .span {
+    font-size: 5vh;
+  }
+  #js-moves {
+    margin: 2vh 0vh 5vh 0vh;
+  }
