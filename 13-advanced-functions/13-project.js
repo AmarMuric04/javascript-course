@@ -3,6 +3,8 @@ let score = JSON.parse(localStorage.getItem("rockpaperscissors")) || {
   ties: 0,
   losses: 0,
 };
+
+/*Add event listeners, to avoid onclick in html*/
 document.querySelector(".js-button-rock").addEventListener("click", () => {
   playGame("Rock");
 });
@@ -14,6 +16,19 @@ document.querySelector(".js-button-scissors").addEventListener("click", () => {
 });
 document.querySelector(".resetScore").addEventListener("click", resetScore);
 document.querySelector(".autoPlay").addEventListener("click", autoPlay);
+
+/*clicking r (rock), p (paper) or s (scissors) on the keyboard
+actually plays the move.*/
+document.body.addEventListener("keydown", (event) => {
+  if (event.key === "r") {
+    playGame("Rock");
+  } else if (event.key === "p") {
+    playGame("Paper");
+  } else if (event.key === "s") {
+    playGame("Scissors");
+  }
+});
+
 console.log(score);
 document.querySelector(
   "#js-score"
@@ -37,7 +52,7 @@ let intervalId;
 
 function autoPlay() {
   if (!isPlaying) {
-    document.querySelector(".js-autoPlay").textContent = "Stop Play";
+    document.querySelector(".js-autoPlay").textContent = "Stop Playing";
     intervalId = setInterval(() => {
       let playerMove = pickComputerMove();
       playGame(playerMove);

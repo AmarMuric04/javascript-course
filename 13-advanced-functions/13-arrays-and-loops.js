@@ -1,26 +1,15 @@
 const todoList = JSON.parse(localStorage.getItem("todo"));
 renderTodoList();
 
-function renderTodoList() {
-  let todoListHTML = "";
-
-  todoList.forEach((todoObject, index) => {
-    const { name, dueDate } = todoObject;
-    const html = `
-      <div>${name}</div>
-      <div>${dueDate}</div>
-      <button onclick="
-        todoList.splice(${index}, 1);
-        renderTodoList();
-      " class="delete-todo-button">Delete</button> 
-    `;
-    todoListHTML += html;
-  });
-
-  document.querySelector(".js-todo-list").innerHTML = todoListHTML;
-  localStorage.setItem("todo", JSON.stringify(todoList));
-}
-
+document.querySelector(".add-todo-button").addEventListener("click", () => {
+  addTodo();
+});
+document.querySelector(".js-name-input").addEventListener("keydown", () => {
+  if (event.key === "Enter") {
+    addTodo();
+  }
+});
+/*gets whatever the user put into the input and saves it into an array that was defined outside of the function*/
 function addTodo() {
   const inputElement = document.querySelector(".js-name-input");
   const name = inputElement.value;
@@ -54,8 +43,27 @@ function addTodo() {
 
   renderTodoList();
 }
-function onEnter(event) {
-  if (event.key === "Enter") {
-    addTodo();
-  }
+/*this function grabs whatever was last put in the array, turns it into a content inside of an object (input that the user gives is 1 content inside the object and the date that they provide is saved into another content inside the object), then it gets put into a variable that represents a div, and whenever the user creates a new input, it just adds the new input into the div (todoListHTML += html), and then its later replaced with the contents inside of a div that already exists in html called js-todo-list. */
+function renderTodoList() {
+  let todoListHTML = "";
+
+  todoList.forEach((todoObject, index) => {
+    const { name, dueDate } = todoObject;
+    const html = `
+      <div>${name}</div>
+      <div>${dueDate}</div>
+      <button class="js-delete-todo-button">Delete</button>`;
+    todoListHTML += html;
+  });
+  document.querySelector(".js-todo-list").innerHTML = todoListHTML;
+  document
+    .querySelectorAll(".js-delete-todo-button")
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener("click", () => {
+        todoList.splice(index, 1);
+        renderTodoList();
+      });
+    });
+
+  localStorage.setItem("todo", JSON.stringify(todoList));
 }

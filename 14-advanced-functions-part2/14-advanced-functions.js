@@ -24,6 +24,7 @@ const object = {
   method() {},
 };
 */
+/* 
 const buttonElement = document.querySelector(".js-button");
 
 const eventListener = () => {
@@ -33,6 +34,23 @@ buttonElement.addEventListener("click", eventListener);
 buttonElement.removeEventListener("click", eventListener);
 buttonElement.addEventListener("click", () => {
   console.log("hello");
-});
+});*/
 
 //use add event listener over onclick
+
+//FILTER AND MAP
+console.log(
+  [1, -3, 5].filter((value, index) => {
+    // const check = value > 0 ? true : false;
+    // return check;
+    return value >= 0;
+  })
+); /*FILTER REMOVES THINGS FROM THE ARRAY*/
+
+console.log(
+  [1, 1, 3].map((value, index) => {
+    return value + 10;
+  })
+);
+console.log([1, 1, 3].map((value) => value + 10));
+/*MAP MODIFIES THE ARRAY, ADDING THINGS ONTO IT*/
