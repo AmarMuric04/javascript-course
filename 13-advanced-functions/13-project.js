@@ -3,6 +3,17 @@ let score = JSON.parse(localStorage.getItem("rockpaperscissors")) || {
   ties: 0,
   losses: 0,
 };
+document.querySelector(".js-button-rock").addEventListener("click", () => {
+  playGame("Rock");
+});
+document.querySelector(".js-button-paper").addEventListener("click", () => {
+  playGame("Paper");
+});
+document.querySelector(".js-button-scissors").addEventListener("click", () => {
+  playGame("Scissors");
+});
+document.querySelector(".resetScore").addEventListener("click", resetScore);
+document.querySelector(".autoPlay").addEventListener("click", autoPlay);
 console.log(score);
 document.querySelector(
   "#js-score"
@@ -27,10 +38,10 @@ let intervalId;
 function autoPlay() {
   if (!isPlaying) {
     document.querySelector(".js-autoPlay").textContent = "Stop Play";
-    intervalId = setInterval(function () {
+    intervalId = setInterval(() => {
       let playerMove = pickComputerMove();
       playGame(playerMove);
-    }, 100);
+    }, 1000);
     isPlaying = true;
   } else {
     document.querySelector(".js-autoPlay").textContent = "Auto Play";
