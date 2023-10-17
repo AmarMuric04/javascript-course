@@ -16,11 +16,11 @@ function pickComputerMove() {
 }
 
 let isPlaying = false;
-let intervalId = "";
+let intervalId;
 
 function autoPlay() {
   if (!isPlaying) {
-    setInterval(function () {
+    intervalId = setInterval(function () {
       let playerMove = pickComputerMove();
       playGame(playerMove);
     }, 1000);
