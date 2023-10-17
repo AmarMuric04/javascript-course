@@ -49,10 +49,7 @@
 //   console.log("interval");
 // }, 3000);
 // console.log("next line2");
-["make dinner", "wash dishes", "watch youtube"].forEach(function (
-  value,
-  index
-) {
+["make dinner", "wash dishes", "watch youtube"].forEach(function (value) {
   if (value === "wash dishes") {
     return;
   }

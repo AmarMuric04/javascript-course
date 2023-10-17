@@ -29,16 +29,26 @@ let messageAmount = 0;
 function addMessage() {
   messageAmount++;
   console.log(messageAmount);
+  changeTitle();
   return messageAmount;
 }
 function removeMessage() {
   messageAmount > 0 ? messageAmount-- : messageAmount;
   return messageAmount;
 }
-intervalId = setInterval(function () {
-  if (document.title === "App") {
-    document.title = `[${messageAmount}] New messages`;
-  } else {
-    document.title = "App";
-  }
-}, 1000);
+intervalId;
+function changeTitle() {
+  intervalId = setInterval(function () {
+    if (document.title === "App") {
+      if (messageAmount === 0) {
+        document.title = "Exercises";
+        clearInterval(intervalId);
+      } else {
+        document.title = `[${messageAmount}] New messages`;
+      }
+    } else {
+      document.title = "App";
+    }
+  }, 1000);
+}
+changeTitle();

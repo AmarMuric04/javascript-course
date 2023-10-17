@@ -1,9 +1,15 @@
-const score = JSON.parse(localStorage.getItem("rockpaperscissors"));
+let score = JSON.parse(localStorage.getItem("rockpaperscissors")) || {
+  wins: 0,
+  ties: 0,
+  losses: 0,
+};
+console.log(score);
 document.querySelector(
   "#js-score"
 ).textContent = `Wins: ${score.wins}, Ties: ${score.ties}, Losses: ${score.losses}`;
 function pickComputerMove() {
   const randomNumber = Math.floor(Math.random() * 3);
+  let computerMove = "";
 
   if (randomNumber === 0) {
     computerMove = "Rock";
@@ -20,12 +26,14 @@ let intervalId;
 
 function autoPlay() {
   if (!isPlaying) {
+    document.querySelector(".js-autoPlay").textContent = "Stop Play";
     intervalId = setInterval(function () {
       let playerMove = pickComputerMove();
       playGame(playerMove);
-    }, 1000);
+    }, 100);
     isPlaying = true;
   } else {
+    document.querySelector(".js-autoPlay").textContent = "Auto Play";
     clearInterval(intervalId);
     isPlaying = false;
   }
@@ -90,12 +98,16 @@ function playGame(playerMove) {
   localStorage.setItem("rockpaperscissors", JSON.stringify(score));
 }
 function resetScore() {
-  (score.wins = 0),
-    (score.losses = 0),
-    (score.ties = 0),
-    (document.querySelector(
-      "#js-score"
-    ).textContent = `Wins: ${score.wins}, Ties: ${score.ties}, Losses: ${score.losses}`);
+  localStorage.removeItem("rockpaperscissors");
+  score = {
+    wins: 0,
+    losses: 0,
+    ties: 0,
+  };
+  document.querySelector(
+    "#js-score"
+  ).textContent = `Wins: ${score.wins}, Ties: ${score.ties}, Losses: ${score.losses}`;
+  localStorage.setItem("rockpaperscissors", JSON.stringify(score));
 }
 function updateScore() {
   document.querySelector(
