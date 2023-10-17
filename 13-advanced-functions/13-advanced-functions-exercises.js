@@ -11,12 +11,12 @@
 //   console.log("12b");
 // });
 // runTwice(add);
-// function timerStart() {
+// const timerStart = () => {
 //   document.querySelector(".js-start").textContent = "Loading...";
-//   setTimeout(function () {
+//   setTimeout(() => {
 //     document.querySelector(".js-start").textContent = "Finished";
 //   }, 1000);
-// }
+//};
 // let timeoutId;
 // function addToCart() {
 //   clearTimeout(timeoutId);
@@ -28,7 +28,6 @@
 let messageAmount = 0;
 function addMessage() {
   messageAmount++;
-  console.log(messageAmount);
   changeTitle();
   return messageAmount;
 }
@@ -36,9 +35,9 @@ function removeMessage() {
   messageAmount > 0 ? messageAmount-- : messageAmount;
   return messageAmount;
 }
-intervalId;
-function changeTitle() {
-  intervalId = setInterval(function () {
+
+const changeTitle = () => {
+  intervalId = setInterval(() => {
     if (document.title === "App") {
       if (messageAmount === 0) {
         document.title = "Exercises";
@@ -50,5 +49,5 @@ function changeTitle() {
       document.title = "App";
     }
   }, 1000);
-}
+};
 changeTitle();

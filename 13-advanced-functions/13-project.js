@@ -14,7 +14,9 @@ document.querySelector(".js-button-paper").addEventListener("click", () => {
 document.querySelector(".js-button-scissors").addEventListener("click", () => {
   playGame("Scissors");
 });
-document.querySelector(".resetScore").addEventListener("click", resetScore);
+document.querySelector(".resetScore").addEventListener("click", () => {
+  areYouSure();
+});
 document.querySelector(".autoPlay").addEventListener("click", autoPlay);
 
 /*clicking r (rock), p (paper) or s (scissors) on the keyboard
@@ -26,8 +28,25 @@ document.body.addEventListener("keydown", (event) => {
     playGame("Paper");
   } else if (event.key === "s") {
     playGame("Scissors");
+  } else if (event.key === "a") {
+    autoPlay();
+  } else if (event.key === "Backspace") {
+    areYouSure();
   }
 });
+
+const areYouSure = () => {
+  document.querySelector(
+    ".js-areYouSure"
+  ).innerHTML = `<div class="areYouSure-wrapper"><p class="areYouSure">Are you sure? </p> <button class="js-yes decision-button">Yes</button><button class="js-no decision-button">No</button></div>`;
+  document.querySelector(".js-yes").addEventListener("click", () => {
+    resetScore();
+    document.querySelector(".js-areYouSure").innerHTML = "";
+  });
+  document.querySelector(".js-no").addEventListener("click", () => {  
+    document.querySelector(".js-areYouSure").innerHTML = "";
+  });
+};
 
 console.log(score);
 document.querySelector(
