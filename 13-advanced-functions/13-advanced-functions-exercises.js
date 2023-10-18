@@ -17,14 +17,14 @@
 //     document.querySelector(".js-start").textContent = "Finished";
 //   }, 1000);
 //};
-// let timeoutId;
-// function addToCart() {
-//   clearTimeout(timeoutId);
-//   document.querySelector(".js-addedToCart").textContent = "Added";
-//   timeoutId = setTimeout(function () {
-//     document.querySelector(".js-addedToCart").textContent = "";
-//   }, 2000);
-// }
+let timeoutId;
+function addToCart() {
+  clearTimeout(timeoutId);
+  document.querySelector(".js-addedToCart").textContent = "Added";
+  timeoutId = setTimeout(function () {
+    document.querySelector(".js-addedToCart").textContent = "";
+  }, 2000);
+}
 let messageAmount = 0;
 function addMessage() {
   messageAmount++;
